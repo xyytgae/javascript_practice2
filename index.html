@@ -7,31 +7,36 @@
  </head>
  <body>
    <h1>ToDoリスト</h1>
-   <label>
-     <input type="radio" name="button" value="all" checked/>全て
-   </label>
+   <form id="target">
 
-   <label>
-     <input type="radio" name="button" value="working" />作業中
-   </label>
+     <input type="radio" id="all" name="button" value="all" onclick="allButtonChange()" checked/>
+     <label for="all">全て</label>
 
-   <label>
-     <input type="radio" name="button" value="working" />完了
-   </label>
+     <input type="radio" id="working" name="button" value="working" onclick="workingButtonChange()" />
+     <label for="working">作業中</label>
+
+     <input type="radio" id="done" name="button" value="done" onclick="doneButtonChange()" />
+     <label for="done">完了</label>
    <br>
+ </form>
 
-   <h3>
-   <div class="id" id="id">ID コメント　状態</div>
-   <!-- <div class="comment" id="comment">コメント</div>
-   <div class="status" id="status">状態</div> -->
-   </h3>
-   <p id ="output"></p>
+   <table id="table">
+     <thead>
+       <tr>
+         <th>ID</th>
+         <th>コメント</th>
+         <th>状態</th>
+       </tr>
+     </thead>
+     <tbody id="tbody">
+     </tbody>
+   </table>
+
 
    <h2>新規タスクの追加</h2>
    <input type="text" name="myText" id="myText">
-   <button type="button" id="button">追加</button>
+   <button type="button" id="add">追加</button>
 
    <script src='js/main.js'></script>
  </body>
 </html>
-
