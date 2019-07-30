@@ -3,26 +3,16 @@
 {
   const add = document.getElementById('add');
   const table = document.getElementById('table');
+  const workingButtonChange = document.getElementById('workingButtonChange');
+  const doneButtonChange = document.getElementById('doneButtonChange');
   let id = 0;
-
-  // ラジオボタンの処理
-  function allButtonChange() {
-
-  }
-
-  function workingButtonChange() {
-
-  }
-
-  function doneButtonChange() {
-
-  }
 
 
   function myFunction(myText) {
 
     // tr要素の作成
     const tr = document.createElement('tr');
+    tr.id = "trId";
 
     // td要素の生成
     const td1 = document.createElement('td');
@@ -44,6 +34,7 @@
     const working = document.createElement('input');
     working.type = 'button';
     working.value = '作業中';
+    working.name = 'inputWorking';
     td3.appendChild(working);
 
     // 作業中ボタンの処理
@@ -59,10 +50,12 @@
     const deletion = document.createElement('input');
     deletion.type = 'button';
     deletion.value = '削除';
-    deletion.onclick = function() {
-      tr.remove();
-    };
     td3.appendChild(deletion);
+
+    // 削除ボタンの処理
+    deletion.addEventListener('click', () => {
+      tr.remove();
+    });
 
     // td3要素をtr要素の子要素に追加
     tr.appendChild(td3);
@@ -76,6 +69,16 @@
 
   add.addEventListener('click', () => {
     myFunction(myText);
+
+  });
+
+  // ラジオボタンの処理
+  workingButtonChange.addEventListener('click', () => {
+  
+  });
+
+
+  doneButtonChange.addEventListener('click', () => {
 
   });
 
