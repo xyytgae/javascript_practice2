@@ -9,7 +9,7 @@
   let id = 0;
 
 
-  function tasksAdd(newTask) {
+  function addTasks(newTask) {
 
     // tr要素の作成
     const trWorking = document.createElement('tr');
@@ -95,7 +95,7 @@
   }
 
   add.addEventListener('click', () => {
-    tasksAdd(newTask);
+    addTasks(newTask);
 
   });
 }
