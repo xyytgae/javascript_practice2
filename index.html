@@ -7,20 +7,19 @@
  </head>
  <body>
    <h1>ToDoリスト</h1>
-   <form id="target">
-
-     <input type="radio" id="all" name="button" value="all" onclick="allButtonChange()" checked/>
+   <form>
+     <input type="radio" id="allButtonChange" name="button" value="all" checked/>
      <label for="all">全て</label>
 
-     <input type="radio" id="working" name="button" value="working" onclick="workingButtonChange()" />
+     <input type="radio" id="workingButtonChange" name="button" value="working" />
      <label for="working">作業中</label>
 
-     <input type="radio" id="done" name="button" value="done" onclick="doneButtonChange()" />
+     <input type="radio" id="doneButtonChange" name="button" value="done" />
      <label for="done">完了</label>
    <br>
  </form>
 
-   <table id="table">
+   <table id="tasks-table">
      <thead>
        <tr>
          <th>ID</th>
@@ -28,13 +27,13 @@
          <th>状態</th>
        </tr>
      </thead>
-     <tbody id="tbody">
+     <tbody>
      </tbody>
    </table>
 
 
    <h2>新規タスクの追加</h2>
-   <input type="text" name="myText" id="myText">
+   <input type="text" name="newTask" id="newTask">
    <button type="button" id="add">追加</button>
 
    <script src='js/main.js'></script>
