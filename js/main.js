@@ -2,18 +2,18 @@
 
 {
   const add = document.getElementById('add');
-  const table = document.getElementById('table');
+  const tasksTable = document.getElementById('tasks-table');
   const allButtonChange = document.getElementById('allButtonChange');
   const workingButtonChange = document.getElementById('workingButtonChange');
   const doneButtonChange = document.getElementById('doneButtonChange');
   let id = 0;
 
 
-  function myFunction(myText) {
+  function tasksAdd(newTask) {
 
     // tr要素の作成
-    let trWorking = document.createElement('tr');
-    let trDone = document.createElement('tr');
+    const trWorking = document.createElement('tr');
+    const trDone = document.createElement('tr');
 
     // td要素の生成
     const td1 = document.createElement('td');
@@ -26,11 +26,11 @@
 
 
     // コメントの内容を追加
-    let comment = document.getElementById('myText').value;
+    const comment = document.getElementById('newTask').value;
     td2.textContent = comment;
     trWorking.appendChild(td2);
 
-    document.getElementById('myText').value = "";
+    document.getElementById('newTask').value = "";
 
     // 作業中の追加
     const working = document.createElement('input');
@@ -72,8 +72,8 @@
     // tr.appendChild(td3);
 
     // tr要素をtable要素の子要素に追加
-    table.appendChild(trWorking);
-    table.appendChild(trDone);
+    tasksTable.appendChild(trWorking);
+    tasksTable.appendChild(trDone);
 
     id++;
 
@@ -95,7 +95,7 @@
   }
 
   add.addEventListener('click', () => {
-    myFunction(myText);
+    tasksAdd(newTask);
 
   });
 }
