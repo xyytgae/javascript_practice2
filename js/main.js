@@ -91,11 +91,9 @@
       trDone.style.display = '';
       trWorking.style.display = '';
     });
-
   }
 
   add.addEventListener('click', () => {
     addTasks(newTask);
-
   });
 }
